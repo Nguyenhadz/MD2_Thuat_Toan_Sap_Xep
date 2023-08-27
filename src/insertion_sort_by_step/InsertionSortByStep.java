@@ -21,23 +21,18 @@ public class InsertionSortByStep {
     }
 
     public static void insertionSort(int[] list) {
-        boolean needNextPass = true;
+
         int pos, x;
         for (int i = 1; i < list.length; i++) {
-            needNextPass = false;
+
             x = list[i];
             pos = i;
             while (pos > 0 && x < list[pos - 1]) {
                 System.out.println("Swap " + list[pos - 1] + " with " + list[pos]);
                 list[pos] = list[pos - 1];
                 pos--;
-                needNextPass = true;
             }
             list[pos] = x;
-            if (!needNextPass) {
-                System.out.println("Array may be sorted and next pass not needed");
-                break;
-            }
             System.out.println("List after the " + i + " sort:");
             for (int item : list) {
                 System.out.println(item + "\t");
